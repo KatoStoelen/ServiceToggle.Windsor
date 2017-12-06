@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service.Toggle.Windsor", "Service.Toggle.Windsor\Service.Toggle.Windsor.csproj", "{5BCAEEED-747E-4B37-8580-C75365203035}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceToggle.Windsor", "ServiceToggle.Windsor\ServiceToggle.Windsor.csproj", "{5BCAEEED-747E-4B37-8580-C75365203035}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service.Toggle.Windsor.UnitTest", "Service.Toggle.Windsor.UnitTest\Service.Toggle.Windsor.UnitTest.csproj", "{4830D6AB-ABC7-4311-A5D2-998A63B4FCA0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceToggle.Windsor.UnitTest", "ServiceToggle.Windsor.UnitTest\ServiceToggle.Windsor.UnitTest.csproj", "{4830D6AB-ABC7-4311-A5D2-998A63B4FCA0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

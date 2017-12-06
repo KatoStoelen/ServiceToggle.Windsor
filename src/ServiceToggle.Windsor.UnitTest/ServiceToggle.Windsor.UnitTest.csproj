@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Service.Toggle.Windsor\Service.Toggle.Windsor.csproj" />
+    <ProjectReference Include="..\ServiceToggle.Windsor\ServiceToggle.Windsor.csproj" />
   </ItemGroup>
 
 </Project>
