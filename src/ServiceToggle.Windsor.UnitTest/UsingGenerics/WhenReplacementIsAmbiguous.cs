@@ -21,7 +21,7 @@ namespace Castle.Windsor.Service.Replacement.UnitTest.UsingGenerics
             Container.Register(
                 Component.For<IDependency>().ImplementedBy<DependencyImpl1>(),
                 Component.For<IDependency>().ImplementedBy<DependencyImpl2>(),
-                Component.For<CollectionDependencyService>());
+                Component.For<ServiceWithCollectionDependency>());
         }
 
         protected override void When()

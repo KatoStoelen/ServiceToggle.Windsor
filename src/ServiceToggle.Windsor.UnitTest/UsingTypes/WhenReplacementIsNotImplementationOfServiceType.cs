@@ -21,7 +21,7 @@ namespace Castle.Windsor.Service.Replacement.UnitTest.UsingTypes
                     .ImplementedBy<DependencyImpl1>()
                     .LifestylePerThread(),
                 Component
-                    .For<InterfaceDependencyService>());
+                    .For<ServiceWithInterfaceDependency>());
         }
 
         protected override void When()
@@ -29,7 +29,7 @@ namespace Castle.Windsor.Service.Replacement.UnitTest.UsingTypes
             Assert.Throws<ArgumentException>(() =>
             {
                 Container.Register(
-                    ComponentReplacement.For(typeof(IDependency)).ReplacedBy(typeof(OtherDependency)));
+                    ComponentReplacement.For(typeof(IDependency)).ReplacedBy(typeof(DateTime)));
             });
 
             Assert.Throws<ArgumentException>(() =>
@@ -37,7 +37,7 @@ namespace Castle.Windsor.Service.Replacement.UnitTest.UsingTypes
                 Container.Register(
                     ComponentReplacement
                         .For(typeof(IDependency), typeof(DependencyImpl1).FullName)
-                        .ReplacedBy(typeof(OtherDependency)));
+                        .ReplacedBy(typeof(DateTime)));
             });
         }
 

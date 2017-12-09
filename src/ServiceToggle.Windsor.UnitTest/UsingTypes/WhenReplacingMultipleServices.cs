@@ -15,8 +15,8 @@ namespace Castle.Windsor.Service.Replacement.UnitTest.UsingTypes
         protected override void Given()
         {
             Container.Register(
-                Component.For<ClassDependencyWithInterfaceService>(),
-                Component.For<InterfaceDependencyService>(),
+                Component.For<ServiceWithClassDependency>(),
+                Component.For<ServiceWithInterfaceDependency>(),
                 Component.For<IDependency, DependencyImpl1>().ImplementedBy<DependencyImpl1>());
         }
 
@@ -25,15 +25,15 @@ namespace Castle.Windsor.Service.Replacement.UnitTest.UsingTypes
             Container.Register(
                 ComponentReplacement
                     .For(typeof(IDependency), typeof(DependencyImpl1))
-                    .ReplacedBy(typeof(InheritedInterfaceDependency)));
+                    .ReplacedBy(typeof(DependencyImpl1Extension)));
         }
 
         [Then]
         public void ShouldReplaceServiceWhereUsedAsClass()
         {
-            var service = Container.Resolve<ClassDependencyWithInterfaceService>();
+            var service = Container.Resolve<ServiceWithClassDependency>();
 
-            Assert.AreEqual(typeof(InheritedInterfaceDependency), service.Dependency.GetType());
+            Assert.AreEqual(typeof(DependencyImpl1Extension), service.Dependency.GetType());
 
             Container.Release(service);
         }
@@ -41,9 +41,9 @@ namespace Castle.Windsor.Service.Replacement.UnitTest.UsingTypes
         [Then]
         public void ShouldReplaceServiceWhereUsedAsInterface()
         {
-            var service = Container.Resolve<InterfaceDependencyService>();
+            var service = Container.Resolve<ServiceWithInterfaceDependency>();
 
-            Assert.AreEqual(typeof(InheritedInterfaceDependency), service.Dependency.GetType());
+            Assert.AreEqual(typeof(DependencyImpl1Extension), service.Dependency.GetType());
 
             Container.Release(service);
         }

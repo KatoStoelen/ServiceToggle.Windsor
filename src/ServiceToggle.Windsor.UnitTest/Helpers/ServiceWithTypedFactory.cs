@@ -7,7 +7,7 @@ using Castle.Windsor.Service.Replacement.UnitTest.Helpers.Factories;
 
 namespace Castle.Windsor.Service.Replacement.UnitTest.Helpers
 {
-    internal class TypedFactoryService : IDisposable
+    internal class ServiceWithTypedFactory : IDisposable
     {
         private readonly IDependencyFactory _factory;
 
@@ -15,7 +15,7 @@ namespace Castle.Windsor.Service.Replacement.UnitTest.Helpers
         public IDependency Dependency2 { get; }
         public IDependency Dependency3 { get; }
 
-        public TypedFactoryService(IDependencyFactory factory)
+        public ServiceWithTypedFactory(IDependencyFactory factory)
         {
             _factory = factory;
 

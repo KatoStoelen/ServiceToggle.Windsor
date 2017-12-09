@@ -5,11 +5,11 @@ using Castle.Windsor.Service.Replacement.UnitTest.Helpers.Dependencies;
 
 namespace Castle.Windsor.Service.Replacement.UnitTest.Helpers
 {
-    internal class ClassDependencyWithInterfaceService
+    internal class ServiceWithInterfaceDependency
     {
-        public DependencyImpl1 Dependency { get; }
+        public IDependency Dependency { get; }
 
-        public ClassDependencyWithInterfaceService(DependencyImpl1 dependency)
+        public ServiceWithInterfaceDependency(IDependency dependency)
         {
             Dependency = dependency;
         }

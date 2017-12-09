@@ -25,15 +25,15 @@ namespace Castle.Windsor.Service.Replacement.UnitTest.UsingGenerics
                     .FromThisAssembly()
                     .IncludeNonPublicTypes()
                     .BasedOn<IDependency>()
-                    .Unless(type => type == typeof(InheritedInterfaceDependency))
+                    .Unless(type => type == typeof(DependencyImpl1Extension))
                     .Configure(config => config.Named(config.Implementation.Name))
                     .LifestylePerThread(),
                 Component
                     .For<IDependencyFactory>()
-                    .AsFactory(config => config.SelectedWith(new TestComponentSelector()))
+                    .AsFactory(config => config.SelectedWith(new IDependencySelector()))
                     .LifestyleTransient(),
                 Component
-                    .For<TypedFactoryService>()
+                    .For<ServiceWithTypedFactory>()
                     .LifestyleTransient());
         }
 
@@ -42,19 +42,19 @@ namespace Castle.Windsor.Service.Replacement.UnitTest.UsingGenerics
             Container.Register(
                 ComponentReplacement
                     .For<DependencyImpl1>("DependencyImpl1")
-                    .ReplacedBy<InheritedInterfaceDependency>(
+                    .ReplacedBy<DependencyImpl1Extension>(
                         Component
                             .For<DependencyImpl1>()
-                            .ImplementedBy<InheritedInterfaceDependency>()
+                            .ImplementedBy<DependencyImpl1Extension>()
                             .LifestyleTransient()));
         }
 
         [Then]
         public void ShouldReplaceSpecifiedService()
         {
-            var service = Container.Resolve<TypedFactoryService>();
+            var service = Container.Resolve<ServiceWithTypedFactory>();
 
-            Assert.AreEqual(typeof(InheritedInterfaceDependency), service.Dependency1.GetType());
+            Assert.AreEqual(typeof(DependencyImpl1Extension), service.Dependency1.GetType());
 
             Container.Release(service);
         }
@@ -63,7 +63,7 @@ namespace Castle.Windsor.Service.Replacement.UnitTest.UsingGenerics
         public void ShouldGetLifestyleFromCustomRegistration()
         {
             var handler = Container.Kernel.GetAssignableHandlers(typeof(IDependency))
-                .Single(h => h.ComponentModel.Implementation == typeof(InheritedInterfaceDependency));
+                .Single(h => h.ComponentModel.Implementation == typeof(DependencyImpl1Extension));
 
             Assert.AreEqual(LifestyleType.Transient, handler.ComponentModel.LifestyleType);
         }
@@ -71,7 +71,7 @@ namespace Castle.Windsor.Service.Replacement.UnitTest.UsingGenerics
         [Then]
         public void ShouldNotReplaceOtherImplementations()
         {
-            var service = Container.Resolve<TypedFactoryService>();
+            var service = Container.Resolve<ServiceWithTypedFactory>();
 
             Assert.AreEqual(typeof(DependencyImpl2), service.Dependency2.GetType());
             Assert.AreEqual(typeof(DependencyImpl3), service.Dependency3.GetType());

@@ -17,22 +17,22 @@ namespace Castle.Windsor.Service.Replacement.UnitTest.UsingTypes
         protected override void Given()
         {
             Container.Register(
-                Component.For<ClassDependencyWithoutInterfaceService>(),
-                Component.For<OtherDependency>().LifestyleTransient());
+                Component.For<ServiceWithClassDependency>(),
+                Component.For<DependencyImpl1>().LifestyleTransient());
         }
 
         protected override void When()
         {
             Container.Register(
-                ComponentReplacement.For(typeof(OtherDependency)).ReplacedBy(typeof(InheritedDependency)));
+                ComponentReplacement.For(typeof(DependencyImpl1)).ReplacedBy(typeof(DependencyImpl1Extension)));
         }
 
         [Then]
         public void ShouldReplaceInjectedService()
         {
-            var service = Container.Resolve<ClassDependencyWithoutInterfaceService>();
+            var service = Container.Resolve<ServiceWithClassDependency>();
 
-            Assert.AreEqual(typeof(InheritedDependency), service.Dependency.GetType());
+            Assert.AreEqual(typeof(DependencyImpl1Extension), service.Dependency.GetType());
 
             Container.Release(service);
         }
@@ -40,8 +40,8 @@ namespace Castle.Windsor.Service.Replacement.UnitTest.UsingTypes
         [Then]
         public void ShouldGetLifestyleFromServiceToReplace()
         {
-            var handler = Container.Kernel.GetAssignableHandlers(typeof(OtherDependency))
-                .Single(h => h.ComponentModel.Implementation == typeof(InheritedDependency));
+            var handler = Container.Kernel.GetAssignableHandlers(typeof(DependencyImpl1))
+                .Single(h => h.ComponentModel.Implementation == typeof(DependencyImpl1Extension));
 
             Assert.AreEqual(LifestyleType.Transient, handler.ComponentModel.LifestyleType);
         }

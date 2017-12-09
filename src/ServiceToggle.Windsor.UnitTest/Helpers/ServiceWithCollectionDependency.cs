@@ -6,11 +6,11 @@ using Castle.Windsor.Service.Replacement.UnitTest.Helpers.Dependencies;
 
 namespace Castle.Windsor.Service.Replacement.UnitTest.Helpers
 {
-    internal class CollectionDependencyService
+    internal class ServiceWithCollectionDependency
     {
         public IEnumerable<IDependency> Dependencies { get; }
 
-        public CollectionDependencyService(IEnumerable<IDependency> dependencies)
+        public ServiceWithCollectionDependency(IEnumerable<IDependency> dependencies)
         {
             Dependencies = dependencies;
         }

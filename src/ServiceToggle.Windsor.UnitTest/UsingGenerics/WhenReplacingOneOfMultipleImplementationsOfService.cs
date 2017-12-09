@@ -21,7 +21,7 @@ namespace Castle.Windsor.Service.Replacement.UnitTest.UsingGenerics
             Container.Register(
                 Component.For<IDependency>().ImplementedBy<DependencyImpl1>(),
                 Component.For<IDependency>().ImplementedBy<DependencyImpl2>(),
-                Component.For<CollectionDependencyService>());
+                Component.For<ServiceWithCollectionDependency>());
         }
 
         protected override void When()
@@ -36,7 +36,7 @@ namespace Castle.Windsor.Service.Replacement.UnitTest.UsingGenerics
         [Then]
         public void NumberOfImplementationsShouldStayTheSame()
         {
-            var service = Container.Resolve<CollectionDependencyService>();
+            var service = Container.Resolve<ServiceWithCollectionDependency>();
 
             Assert.AreEqual(2, service.Dependencies.Count());
 
@@ -46,7 +46,7 @@ namespace Castle.Windsor.Service.Replacement.UnitTest.UsingGenerics
         [Then]
         public void ShouldInjectServiceThatIsNotReplaced()
         {
-            var service = Container.Resolve<CollectionDependencyService>();
+            var service = Container.Resolve<ServiceWithCollectionDependency>();
 
             Assert.IsTrue(service.Dependencies.Any(dependency => dependency.GetType() == typeof(DependencyImpl1)));
 
@@ -56,7 +56,7 @@ namespace Castle.Windsor.Service.Replacement.UnitTest.UsingGenerics
         [Then]
         public void ShouldInjectNewImplementationOfReplacedService()
         {
-            var service = Container.Resolve<CollectionDependencyService>();
+            var service = Container.Resolve<ServiceWithCollectionDependency>();
 
             Assert.IsTrue(service.Dependencies.Any(dependency => dependency.GetType() == typeof(DependencyImpl3)));
 

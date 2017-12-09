@@ -3,5 +3,5 @@
 
 namespace Castle.Windsor.Service.Replacement.UnitTest.Helpers.Dependencies
 {
-    internal class InheritedInterfaceDependency : DependencyImpl1 { }
+    internal class DependencyImpl1Extension : DependencyImpl1 { }
 }

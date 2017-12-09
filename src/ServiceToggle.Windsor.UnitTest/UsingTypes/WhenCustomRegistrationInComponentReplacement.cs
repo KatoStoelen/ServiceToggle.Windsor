@@ -22,7 +22,7 @@ namespace Castle.Windsor.Service.Replacement.UnitTest.UsingTypes
                     .ImplementedBy<DependencyImpl1>()
                     .LifestylePerThread(),
                 Component
-                    .For<InterfaceDependencyService>());
+                    .For<ServiceWithInterfaceDependency>());
         }
 
         protected override void When()
@@ -41,7 +41,7 @@ namespace Castle.Windsor.Service.Replacement.UnitTest.UsingTypes
         [Then]
         public void ShouldReplaceInjectedService()
         {
-            var service = Container.Resolve<InterfaceDependencyService>();
+            var service = Container.Resolve<ServiceWithInterfaceDependency>();
 
             Assert.AreEqual(typeof(DependencyImpl2), service.Dependency.GetType());
 

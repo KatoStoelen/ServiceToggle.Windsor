@@ -6,7 +6,7 @@ using Castle.Facilities.TypedFactory;
 
 namespace Castle.Windsor.Service.Replacement.UnitTest.Helpers.Factories
 {
-    internal class TestComponentSelector : DefaultTypedFactoryComponentSelector
+    internal class IDependencySelector : DefaultTypedFactoryComponentSelector
     {
         private const string FactoryMethodName = "Create";
 

@@ -21,7 +21,7 @@ namespace Castle.Windsor.Service.Replacement.UnitTest.UsingTypes
             Container.Register(
                 Component.For<IDependency>().ImplementedBy<DependencyImpl1>(),
                 Component.For<IDependency>().ImplementedBy<DependencyImpl2>(),
-                Component.For<CollectionDependencyService>());
+                Component.For<ServiceWithCollectionDependency>());
         }
 
         protected override void When()
@@ -31,7 +31,7 @@ namespace Castle.Windsor.Service.Replacement.UnitTest.UsingTypes
                 Container.Register(
                     ComponentReplacement
                         .For(typeof(IDependency))
-                        .CurrentlyImplementedBy(typeof(OtherDependency))
+                        .CurrentlyImplementedBy(typeof(DateTime))
                         .ReplacedBy(typeof(DependencyImpl3)));
             });
 
@@ -40,7 +40,7 @@ namespace Castle.Windsor.Service.Replacement.UnitTest.UsingTypes
                 Container.Register(
                     ComponentReplacement
                         .For(typeof(IDependency), typeof(DependencyImpl1).FullName)
-                        .CurrentlyImplementedBy(typeof(OtherDependency))
+                        .CurrentlyImplementedBy(typeof(DateTime))
                         .ReplacedBy(typeof(DependencyImpl3)));
             });
         }
