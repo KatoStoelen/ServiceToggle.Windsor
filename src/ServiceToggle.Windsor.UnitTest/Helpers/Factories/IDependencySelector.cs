@@ -4,7 +4,7 @@
 using System.Reflection;
 using Castle.Facilities.TypedFactory;
 
-namespace Castle.Windsor.Service.Replacement.UnitTest.Helpers.Factories
+namespace ServiceToggle.Windsor.UnitTest.Helpers.Factories
 {
     internal class IDependencySelector : DefaultTypedFactoryComponentSelector
     {

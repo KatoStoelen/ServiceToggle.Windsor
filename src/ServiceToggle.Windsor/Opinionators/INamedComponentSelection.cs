@@ -3,7 +3,7 @@
 
 using System;
 
-namespace Castle.Windsor.Service.Replacement.Opinionators
+namespace ServiceToggle.Windsor.Opinionators
 {
     internal interface INamedComponentSelection
     {

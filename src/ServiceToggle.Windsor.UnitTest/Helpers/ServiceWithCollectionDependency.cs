@@ -2,9 +2,9 @@
 // Licensed under the Apache License, Version 2.0. See LICENSE in the repository root for license information.
 
 using System.Collections.Generic;
-using Castle.Windsor.Service.Replacement.UnitTest.Helpers.Dependencies;
+using ServiceToggle.Windsor.UnitTest.Helpers.Dependencies;
 
-namespace Castle.Windsor.Service.Replacement.UnitTest.Helpers
+namespace ServiceToggle.Windsor.UnitTest.Helpers
 {
     internal class ServiceWithCollectionDependency
     {

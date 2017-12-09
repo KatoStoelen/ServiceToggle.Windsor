@@ -2,12 +2,12 @@
 // Licensed under the Apache License, Version 2.0. See LICENSE in the repository root for license information.
 
 using Castle.MicroKernel.Registration;
-using Castle.Windsor.Service.Replacement.Extensions;
-using Castle.Windsor.Service.Replacement.UnitTest.Helpers;
-using Castle.Windsor.Service.Replacement.UnitTest.Helpers.Dependencies;
+using ServiceToggle.Windsor.Extensions;
+using ServiceToggle.Windsor.UnitTest.Helpers;
+using ServiceToggle.Windsor.UnitTest.Helpers.Dependencies;
 using NUnit.Framework;
 
-namespace Castle.Windsor.Service.Replacement.UnitTest.UsingGenerics
+namespace ServiceToggle.Windsor.UnitTest.UsingGenerics
 {
     [TestFixture]
     internal class WhenReplacingClassDependencyAlsoRegisteredAsInterface : GivenWhenThenTest

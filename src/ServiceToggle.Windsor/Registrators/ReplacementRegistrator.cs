@@ -6,9 +6,10 @@ using Castle.Core;
 using Castle.Core.Internal;
 using Castle.MicroKernel;
 using Castle.MicroKernel.Registration;
-using Castle.Windsor.Service.Replacement.Extensions;
+using ServiceToggle.Windsor.Extensions;
+using Castle.Windsor;
 
-namespace Castle.Windsor.Service.Replacement.Registrators
+namespace ServiceToggle.Windsor.Registrators
 {
     internal abstract class ReplacementRegistrator<TService> : IRegistrator
         where TService : class

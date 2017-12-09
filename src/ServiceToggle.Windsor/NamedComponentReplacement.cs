@@ -2,12 +2,12 @@
 // Licensed under the Apache License, Version 2.0. See LICENSE in the repository root for license information.
 
 using Castle.MicroKernel.Registration;
-using Castle.Windsor.Service.Replacement.Opinionators;
-using Castle.Windsor.Service.Replacement.Registrators;
+using ServiceToggle.Windsor.Opinionators;
+using ServiceToggle.Windsor.Registrators;
 using System;
 using System.Collections.Generic;
 
-namespace Castle.Windsor.Service.Replacement
+namespace ServiceToggle.Windsor
 {
     internal class NamedComponentReplacement<TService> : INamedComponentSelection, IComponentReplacement<TService>
         where TService : class

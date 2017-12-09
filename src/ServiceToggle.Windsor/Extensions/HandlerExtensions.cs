@@ -6,7 +6,7 @@ using System.Linq;
 using Castle.Core;
 using Castle.MicroKernel;
 
-namespace Castle.Windsor.Service.Replacement.Extensions
+namespace ServiceToggle.Windsor.Extensions
 {
     internal static class HandlerExtensions
     {

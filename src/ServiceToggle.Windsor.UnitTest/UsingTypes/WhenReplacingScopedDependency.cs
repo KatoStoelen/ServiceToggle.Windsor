@@ -8,12 +8,12 @@ using Castle.Core.Internal;
 using Castle.MicroKernel.Context;
 using Castle.MicroKernel.Lifestyle.Scoped;
 using Castle.MicroKernel.Registration;
-using Castle.Windsor.Service.Replacement.Extensions;
-using Castle.Windsor.Service.Replacement.UnitTest.Helpers;
-using Castle.Windsor.Service.Replacement.UnitTest.Helpers.Dependencies;
+using ServiceToggle.Windsor.Extensions;
+using ServiceToggle.Windsor.UnitTest.Helpers;
+using ServiceToggle.Windsor.UnitTest.Helpers.Dependencies;
 using NUnit.Framework;
 
-namespace Castle.Windsor.Service.Replacement.UnitTest.UsingTypes
+namespace ServiceToggle.Windsor.UnitTest.UsingTypes
 {
     internal class WhenReplacingScopedDependency : GivenWhenThenTest
     {

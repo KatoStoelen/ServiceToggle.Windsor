@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Castle.Windsor.Service.Replacement.Opinionators
+namespace ServiceToggle.Windsor.Opinionators
 {
     internal class UnnamedHandlerSelector : IHandlerSelector
     {

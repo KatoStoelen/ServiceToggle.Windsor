@@ -3,10 +3,11 @@
 
 using System;
 using Castle.MicroKernel;
-using Castle.Windsor.Service.Replacement.Extensions;
+using ServiceToggle.Windsor.Extensions;
 using System.Collections.Generic;
+using Castle.Windsor;
 
-namespace Castle.Windsor.Service.Replacement.Registrators
+namespace ServiceToggle.Windsor.Registrators
 {
     internal class UnnamedReplacementRegistrator<TService> : ReplacementRegistrator<TService>
         where TService : class

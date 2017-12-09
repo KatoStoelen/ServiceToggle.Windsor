@@ -1,12 +1,12 @@
 ﻿// Copyright (c) Kato Stoelen. All rights reserved.
 // Licensed under the Apache License, Version 2.0. See LICENSE in the repository root for license information.
 
-using Castle.Windsor.Service.Replacement.Builders;
+using ServiceToggle.Windsor.Builders;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Castle.Windsor.Service.Replacement
+namespace ServiceToggle.Windsor
 {
     public static class ComponentReplacement
     {

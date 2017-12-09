@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Castle.Windsor.Service.Replacement.Builders
+namespace ServiceToggle.Windsor.Builders
 {
     internal class UnnamedComponentReplacementBuilder<TService> : ComponentReplacementBuilder<TService>
         where TService : class

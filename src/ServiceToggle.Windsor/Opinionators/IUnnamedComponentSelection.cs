@@ -4,7 +4,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Castle.Windsor.Service.Replacement.Opinionators
+namespace ServiceToggle.Windsor.Opinionators
 {
     internal interface IUnnamedComponentSelection
     {

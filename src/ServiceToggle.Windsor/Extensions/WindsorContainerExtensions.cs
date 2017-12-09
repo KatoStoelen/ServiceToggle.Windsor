@@ -4,10 +4,11 @@
 using System;
 using System.Linq;
 using Castle.MicroKernel;
-using Castle.Windsor.Service.Replacement.Opinionators;
+using ServiceToggle.Windsor.Opinionators;
 using System.Collections.Generic;
+using Castle.Windsor;
 
-namespace Castle.Windsor.Service.Replacement.Extensions
+namespace ServiceToggle.Windsor.Extensions
 {
     public static class WindsorContainerExtensions
     {

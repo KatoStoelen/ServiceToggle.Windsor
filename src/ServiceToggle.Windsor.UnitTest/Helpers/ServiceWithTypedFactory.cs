@@ -2,10 +2,10 @@
 // Licensed under the Apache License, Version 2.0. See LICENSE in the repository root for license information.
 
 using System;
-using Castle.Windsor.Service.Replacement.UnitTest.Helpers.Dependencies;
-using Castle.Windsor.Service.Replacement.UnitTest.Helpers.Factories;
+using ServiceToggle.Windsor.UnitTest.Helpers.Dependencies;
+using ServiceToggle.Windsor.UnitTest.Helpers.Factories;
 
-namespace Castle.Windsor.Service.Replacement.UnitTest.Helpers
+namespace ServiceToggle.Windsor.UnitTest.Helpers
 {
     internal class ServiceWithTypedFactory : IDisposable
     {

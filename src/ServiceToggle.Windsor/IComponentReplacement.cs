@@ -5,7 +5,7 @@ using Castle.MicroKernel.Registration;
 using System;
 using System.Collections.Generic;
 
-namespace Castle.Windsor.Service.Replacement
+namespace ServiceToggle.Windsor
 {
     internal interface IComponentReplacement<TService> : IReplacement
         where TService : class

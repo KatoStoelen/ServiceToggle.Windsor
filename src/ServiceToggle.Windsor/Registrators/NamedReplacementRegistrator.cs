@@ -5,8 +5,9 @@ using System;
 using System.Linq;
 using Castle.MicroKernel;
 using System.Collections.Generic;
+using Castle.Windsor;
 
-namespace Castle.Windsor.Service.Replacement.Registrators
+namespace ServiceToggle.Windsor.Registrators
 {
     internal class NamedReplacementRegistrator<TService> : ReplacementRegistrator<TService>
         where TService : class

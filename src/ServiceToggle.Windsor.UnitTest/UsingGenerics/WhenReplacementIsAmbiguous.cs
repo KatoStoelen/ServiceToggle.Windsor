@@ -4,12 +4,12 @@
 using System;
 using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.Resolvers.SpecializedResolvers;
-using Castle.Windsor.Service.Replacement.Extensions;
-using Castle.Windsor.Service.Replacement.UnitTest.Helpers;
-using Castle.Windsor.Service.Replacement.UnitTest.Helpers.Dependencies;
+using ServiceToggle.Windsor.Extensions;
+using ServiceToggle.Windsor.UnitTest.Helpers;
+using ServiceToggle.Windsor.UnitTest.Helpers.Dependencies;
 using NUnit.Framework;
 
-namespace Castle.Windsor.Service.Replacement.UnitTest.UsingGenerics
+namespace ServiceToggle.Windsor.UnitTest.UsingGenerics
 {
     [TestFixture]
     internal class WhenReplacementIsAmbiguous : GivenWhenThenTest
